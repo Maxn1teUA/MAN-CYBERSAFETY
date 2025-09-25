@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажер з Кібербезпеки</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="intro-screen" class="screen active">
+            <h1>Тренажер "Як не попастися на хакера"</h1>
+            <p>Введіть своє ім'я, щоб розпочати тестування на рівень кібербезпеки.</p>
+            <input type="text" id="user-name" placeholder="Ваше ім'я">
+            <button id="start-quiz-btn">Почати Тест</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <h2 id="quiz-title">Квіз з Кібербезпеки</h2>
+            <div class="progress-container">
+                <span id="question-count">Питання 1 з 20</span>
+            </div>
+
+            <div id="question-box" class="question-box">
+                <p id="question-text">Текст питання...</p>
+                <div id="answers-container" class="answers-container">
+                </div>
+                <button id="next-question-btn" class="hidden" disabled>Далі</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2 data-text="Ваш результат,">Ваш результат, <span id="result-name"></span>!</h2>
+
+            <div class="result-stats">
+                <p>Ви відповіли правильно на <span id="correct-answers-count">0</span> з 20 запитань.</p>
+                <p>Ваш рівень кібербезпеки:</p>
+            </div>
+
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill">
+                    <span id="progress-percentage">0%</span>
+                </div>
+            </div>
+
+            <h3 id="safety-level-title">Ваш рівень: ...</h3>
+            <p id="safety-level-description">Тут буде загальний опис рівня.</p>
+
+            <div class="advice-section">
+                <h3>Ваші індивідуальні поради:</h3>
+                <div id="advice-list"></div>
+            </div>
+
+            <button id="show-doc-btn" class="doc-btn">Повна Документація про Кібербезпеку</button>
+
+            <button onclick="window.print()" class="print-btn">Видати Документ (Роздрукувати Поради)</button>
+            <button id="restart-quiz-btn">Спробувати Ще Раз</button>
+        </div>
+    </div>
+
+    <div id="documentation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="doc-title">Повна Документація: Основи Особистої Кібербезпеки</h2>
+
+            <div id="doc-content">
+            </div>
+
+            <button class="print-doc-btn">Роздрукувати Документацію</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
